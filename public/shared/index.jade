@@ -1,0 +1,11 @@
+//- pre= JSON.stringify(, null, 2)
+ul.nav.nav-pills.nav-stacked.index
+  li
+    form
+      input.search-query(type="text", placeholder="Search")
+  li(class="#{ current.source=='getting-started'?'active':'' }"): a(href="/getting-started") Get started
+  li(class="#{ current.source=='configuration'?'active':'' }"): a(href="/configuration") Configuration
+  li(class="#{ current.source=='variables'?'active':'' }"): a(href="/variables") Local Variables
+  li(class="#{ current.source=='pre-processors'?'active':'' }"): a(href="/pre-processors") Pre-processors
+  li(class="#{ current.source=='cli'?'active':'' }"): a(href="/cli") CLI Tool
+  li(class="#{ current.source=='boilerplates'?'active':'' }"): a(href="/boilerplates") Boilerplates
