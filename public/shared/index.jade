@@ -1,11 +1,15 @@
 //- pre= JSON.stringify(, null, 2)
-ul.nav.nav-pills.nav-stacked.index
+ul.nav.nav-tabs.nav-stacked.index
   li
-    form
-      input.search-query(type="text", placeholder="Search")
-  li(class="#{ current.source=='getting-started'?'active':'' }"): a(href="/getting-started") Get started
-  li(class="#{ current.source=='configuration'?'active':'' }"): a(href="/configuration") Configuration
-  li(class="#{ current.source=='variables'?'active':'' }"): a(href="/variables") Local Variables
-  li(class="#{ current.source=='pre-processors'?'active':'' }"): a(href="/pre-processors") Pre-processors
-  li(class="#{ current.source=='cli'?'active':'' }"): a(href="/cli") CLI Tool
-  li(class="#{ current.source=='boilerplates'?'active':'' }"): a(href="/boilerplates") Boilerplates
+    form(method="get", action="/search")
+      input.search-query(type="text", name="q", placeholder="Search")
+  li(class="#{ current.path[0]=='getting-started'?'active':'' }")
+    a(href="/getting-started") Get started
+    ul.nav-child.nav.nav-tabs.nav-stacked(class="#{ current.path[0]=='getting-started'?'':'hide'}")
+      li(class="#{ current.path[1]=='download'?'active':''}"): a(href="/getting-started/download") Download
+      li(class="#{ current.path[1]=='hello-world'?'active':''}"): a(href="/getting-started/hello-world") Hello World
+  li(class="#{ current.path[0]=='configuration'?'active':'' }"): a(href="/configuration") Configuration
+  li(class="#{ current.path[0]=='variables'?'active':'' }"): a(href="/variables") Local Variables
+  li(class="#{ current.path[0]=='pre-processors'?'active':'' }"): a(href="/pre-processors") Pre-processors
+  li(class="#{ current.path[0]=='cli'?'active':'' }"): a(href="/cli") CLI Tool
+  li(class="#{ current.path[0]=='boilerplates'?'active':'' }"): a(href="/boilerplates") Boilerplates
